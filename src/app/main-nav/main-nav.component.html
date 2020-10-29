@@ -1,0 +1,107 @@
+
+
+
+<mat-drawer-container
+  [class.drawer-opened]="drawer.opened"
+  class="example-container">
+  <mat-drawer #drawer 
+    class="drawer" 
+    mode="side" 
+    opened="false">
+
+    <!--<mat-toolbar class="header" [hidden]="flag==true">
+      <div class="pointer" routerLink="/login" >Hello! Sign in</div>
+      
+      <mat-icon class="close pointer"
+     (click)="drawer.close()">close</mat-icon>
+    </mat-toolbar>-->
+
+    <mat-toolbar class="header" [hidden]="flag==true">
+      <div class="pointer" routerLink="/login" >Hello!   {{userData?.NOMBRE_USER}} </div>
+      <mat-icon class="close pointer" 
+      (click)="drawer.close()"> close</mat-icon>
+    </mat-toolbar>
+
+    <mat-toolbar class="header" [hidden]="flag==false">
+      <div class="pointer" routerLink="/login" [hidden]="flag==false">Hello! Sign in </div>
+      <mat-icon class="close pointer"
+      (click)="drawer.close()"> close</mat-icon>
+    </mat-toolbar>
+
+
+ 
+ 
+
+    <div class="contents border pointer" routerLink="/addproducts" [hidden]="flag==true">
+     
+      <span > Agregar Producto</span>
+      
+    </div>
+
+    
+    <div class="contents border pointer" routerLink="/addcategories" [hidden]="flag==true">
+     
+      <span  > Agregar Categoria</span>
+      
+    </div>
+
+    <!--<div class="contents border">
+      <button class="login-btn" (click)="logout()">Logout</button>
+    </div>-->
+
+  </mat-drawer>
+  
+  <mat-toolbar class="main header">
+    <mat-icon
+      *ngIf="!drawer.opened"
+      (click)="drawer.toggle()">
+      menu 
+    </mat-icon>
+    
+    <div class="margin pointer" routerLink="/landing"> ComminGlobal</div>
+    <span class="example-spacer"></span>
+
+    <span class="pointer coinspan" routerLink="/credit" [hidden]="flag==true">
+      <img class="coin" src="../../assets/img/coinc.png" alt="">
+      <span class="limitcredit"> {{saldo}}</span>
+    </span>
+
+    <span class="pointer caretsize" routerLink="/carret" [hidden]="flag==true">
+      <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-cart3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+      </svg>
+     <span id="result" [hidden]="flag==true" > {{count}}</span>
+    </span>
+
+
+
+
+
+    <span class="pointer coinspan" routerLink="/register" [hidden]="flag==false">
+      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M15 4H1v8h14V4zM1 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H1z"/>
+        <path d="M13 4a2 2 0 0 0 2 2V4h-2zM3 4a2 2 0 0 1-2 2V4h2zm10 8a2 2 0 0 1 2-2v2h-2zM3 12a2 2 0 0 0-2-2v2h2zm7-4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
+      </svg>
+      0.00
+    </span>
+
+
+
+    <span class="pointer caretsize" routerLink="/carret-anous" [hidden]="flag==false">
+      <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-cart3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+      </svg>
+    </span>
+
+
+
+
+  </mat-toolbar>
+
+  <div class="main contents">
+    <router-outlet></router-outlet>
+  </div>
+ 
+
+
+</mat-drawer-container>

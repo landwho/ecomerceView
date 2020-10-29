@@ -1,0 +1,124 @@
+<!--<div class="site-banner">
+  <div class="inner">
+      <div class="row">
+          <div class="col-lg-4 p-0">
+              <img class="banner-img" src="https://i.ibb.co/Bt79CKx/db67cf8b8a5f772c5d840d35ffa653a1.jpg" alt="">
+          </div>
+          <div class="col-lg-6 p-0">
+              <div class="caption-content">
+                  <h1 class="title text-grey w100">Consíguelo <strong class="text-primary w700">aquí!</strong></h1>
+                  <p class="text w300">Lorem ipsum dolor sit amet <strong class="text-primary w700">consectetur</strong> adipisicing elit. Cumque culpa blanditiis incidunt perspi ciatis nam</p>
+                  <div class="btn-group">
+                      <a href="#" class="btn prim-btn md" routerLink="/addproducts">Add New Project</a>
+                      <a href="#" class="btn prim-btn-out md">Read More</a>
+                  </div>
+                  <hr>
+                  <div class="site-form">
+                      <form action="">
+                          <input type="text" class="form-ui" placeholder="Buscar articulos">
+                          <button class="submit-btn"><i class="flaticon-magnifying-glass"></i></button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>  
+  </div>
+</div>-->
+
+
+
+
+
+<!-- categoria selects -->
+  <div class="displaybox">
+  
+
+
+    <div class="col-md-12 ">
+      <div class="row">
+        <span class="example-spacer"></span>
+        
+
+
+      <form class="form-inline pad">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText"  placeholder="Buscar">
+
+
+        <div class="form-group ">
+          <label for="exampleFormControlSelect1">Categoria:</label>
+          <select class="form-control" name="idE"  [(ngModel)]="idE" (click)="getSubCategorias()">
+            <option disabled selected>Todas las categorias</option>
+            <option *ngFor="let c of allCategories" [value]="c.ID_CATEGORIAS" selected>{{c.NOMBRE_CATEGORIAS}}</option>
+          </select>
+        </div>
+
+        <div class="form-group ">
+          <label for="exampleFormControlSelect1">Categoria:</label>
+          <select class="form-control" name="subcategoria" [(ngModel)]="subCategoria.subcategoria" (click)="getProduct()">
+            <option disabled selected>Todas las categorias</option>
+            <option *ngFor="let s of subCategorias" [value]="s.NAME_SUBCATEGORIA"  >{{s.NAME_SUBCATEGORIA}}</option>
+          </select>
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+         <button class="btn btn-warning" (click)="refresh()">Refresh</button>
+        </div>
+      </form>
+  </div>
+</div>
+
+
+    <div class="roll" *ngFor="let p of allProducts | filter:searchText">
+      <div class="dis dis1">
+        <div class="distopwrap">
+        <div class="dislogo1 pointer">
+          <img class="dislogo dislogo1 img pointer" src="{{p.PRODUCTPHOTO}}" alt="">
+        </div>
+        <div class="center pointer">
+          <img class="img image" src="{{p.PRODUCTPHOTO}}" alt="">
+          <div><strong>{{p.PRODUCTNAME}}</strong></div> 
+        </div>
+        </div>
+        <div class="disprice">
+          Q.{{p.PRODUCTPRICE}}
+        </div>
+        <button class="disbut" (click)="addToCart(p.PROCUTID,p.PRODUCTPRICE,p.PRODUCTNAME,p.PRODUCTPHOTO)">
+          <i class="fa fa-shopping-cart faspace" ></i> ADD TO CART</button>
+      </div>
+    </div>
+    
+   
+<!--<p><button (click)="count()" type="button">Click me!</button></p>
+<p><button (click)="clickNoCounter()" type="button">Click menos!</button></p>
+<div id="result"></div>-->
+
+   
+  </div>
+
+
+  <div class="end paginationPad">
+    <div class="pagination">
+      <a href="#">&laquo;</a>
+      <a  class="active" href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#">6</a>
+      <a href="#">&raquo;</a>
+    </div>
+  </div>
+  
+
+
+
+
+
+<br><br>
+
+
+
+
+
+  
+
+  

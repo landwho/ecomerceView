@@ -1,0 +1,29 @@
+<div class="container">
+    
+    <br> <br>
+
+ 
+
+
+        <form class="panel2">
+            <h2> Agregar SUB Categoria</h2>
+            <div style="text-align: end;">
+                <button type="submit" class="btn btn-primary" (click)="addSubCategory()">Agregar</button>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Categoria:</label>
+                <select class="form-control" name="idCat" [(ngModel)]="idCat" (click)="getIdCategories()">>
+                    <option *ngFor="let c of allCategories" [value]="c.ID_CATEGORIAS">{{c.NOMBRE_CATEGORIAS}}</option>
+                </select>
+            </div>
+      
+            <div class="form-group">
+              <label for="exampleInputEmail1">Nombre de la Sub-categoria:</label>
+              <input type="text" class="form-control" name="subCategoryName" [(ngModel)]="subCategoryName"  aria-describedby="emailHelp" placeholder="Nombre de la sub-categoria">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary" routerLink="/addcategories">Atras</button>
+            </div>
+          </form>
+ 
+    </div>

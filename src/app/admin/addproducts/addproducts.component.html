@@ -1,0 +1,162 @@
+
+<!--<div class="container">
+
+<div class="card prodpadd">
+
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Nombre del producto:</label>
+            <input type="text" class="form-control" name="nombre" [(ngModel)]="name"  placeholder="Nombre del procucto">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Categoria:</label>
+           
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option *ngFor="let c of allCategories">{{c.NOMBRE_CATEGORIAS}}</option>
+    
+              </select>
+
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Descripcion:</label>
+          <input type="text" class="form-control" name="description"  [(ngModel)]="description"  placeholder="Descripcion del producto">
+        </div>
+      
+        
+        <div class="form-row">
+       
+            <div class="form-group col-md-2">
+                <label for="inputZip">Precio:</label>
+                <input type="number" class="form-control" name="price"  [(ngModel)]="price"  placeholder="precio">
+              </div>
+          <div class="form-group col-md-8">
+            <label for="inputState">Imagen</label>
+            <input type="text" class="form-control" name="image" [(ngModel)]="image"  placeholder="coloca la imagen aqui">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputState">ID:</label>
+            <input type="text" class="form-control" name="id" [(ngModel)]="id"  placeholder="ID de producto">
+          </div>
+          
+          
+        </div>
+        
+        
+        <button type="submit" class="btn btn-primary" (click)="addProduct()">Guardar</button>
+      </form>
+
+
+
+
+
+
+</div>
+
+
+</div>-->
+
+
+
+<div class="site-banner">
+
+  <div class="inner">
+    <br>
+      <div class="row">
+          <div class="col-lg-4 p-0 ">
+              <img class="banner-img" src="../../../assets/img/product.png" alt="">
+          </div>
+          <div class="col-lg-7 p-0 panel2">
+              <div class="caption-content padcaption">
+                  <h1 class="title text-grey w100">Agregar <strong class="text-primary w700">Producto!</strong></h1>
+                  <p class="text w300"><strong class="text-primary w700">Conectate!</strong> Cada dia hacemos crecer nuestra base de datos!</p>
+                  <hr>
+                  <div class="site-form">
+                      <form action="/api/subir" method="post" enctype="multipart/form-data">
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputEmail4">Nombre del producto:</label>
+                            <input type="text" class="form-control" name="nombre" [(ngModel)]="productData.name"  placeholder="Nombre del procucto">
+                          </div>
+                          <div class="form-group col-md-3">
+                            <label>Categoria:</label>
+                           
+                            <select class="form-control" name="categoria" [(ngModel)]="productData.categoria" (click)="getSubCategorias()">
+                                <option *ngFor="let c of allCategories" [value]="c.ID_CATEGORIAS">{{c.NOMBRE_CATEGORIAS}}</option>
+                    
+                              </select>
+                
+                          </div>
+
+
+                          <div class="form-group col-md-3">
+                            <label>SubCategoria:</label>
+                            <select class="form-control" name="subcategoria" [(ngModel)]="productData.subcategoria">
+                              <option *ngFor="let s of subCategorias" [value]="s.NAME_SUBCATEGORIA">{{s.NAME_SUBCATEGORIA}}</option>
+                            </select>               
+                          </div>
+
+
+                        </div>
+                        <div class="form-group">
+                          <label for="inputAddress">Descripcion:</label>
+                          <input type="text" class="form-control" name="description"  [(ngModel)]="productData.description"  placeholder="Descripcion del producto">
+                        </div>
+                      
+                        
+                        <div class="form-row">
+                      
+                          <div class="form-group col-md-3">
+                              <label for="inputZip">Precio Q:</label>
+                              <input type="number" class="form-control" name="price"  [(ngModel)]="productData.price"  placeholder="precio">
+                          </div>
+                          <div class="form-group col-md-9">
+                            <label for="inputState">Imagen</label>
+                            <input type="text" class="form-control" name="image" [(ngModel)]="productData.image"  placeholder="coloca la imagen aqui">
+                           
+                            <!--<label for="">Elige una imagen</label>
+                            <input type="file"class="form-control" name="image" [(ngModel)]="productData.image" 
+                            placeholder="coloca la imagen aqui"(change)="onFileChange($event)">-->
+                            
+                          </div>
+                          
+                          
+                          
+                        </div>
+
+
+                        <div class="form-row">
+
+                          <div class="form-group col-md-3">
+                            <label for="inputState">Cantidad:</label>
+                            <input type="number" class="form-control" name="cantidad" [(ngModel)]="productData.cantidad"  placeholder="Cantidad">
+                          </div>
+
+                          <!--<div class="form-group col-md-3">
+                            <label for="inputState">ID:</label>
+                            <input type="text" class="form-control" name="id" [(ngModel)]="productData.id"  placeholder="ID de producto">
+                          </div>-->
+
+                        </div>
+                        
+                        
+                        <button type="submit" class="btn btn-primary" (click)="addProduct()">Guardar</button>
+
+
+
+
+
+
+                          <!--<input type="text" class="form-ui" placeholder="Buscar articulos">
+                          <button class="submit-btn"><i class="flaticon-magnifying-glass"></i></button>-->
+
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>  
+      <br><br><br>
+  </div>
+  
+</div>

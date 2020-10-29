@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="login-page">
+    <div class="form">
+      <div class="center"><h2>Registrate Gratis!</h2></div>
+        <form class="login-form">
+            <input type="text" name="nombre" [(ngModel)]="userData.nombre" placeholder="Nombre"/>
+            <input type="text" name="apellido" [(ngModel)]="userData.apellido" placeholder="Apellido"/>
+
+            <input type="email" name="email" [(ngModel)]="userData.email" placeholder="Correo Electronico"/>
+            <label for="">Pais</label>
+            <select class="form-control" name="userData.country" [(ngModel)]="userData.country">
+                <option *ngFor="let c of countries" [value]="c.NAME_COUNTRY">{{c.NAME_COUNTRY}}</option>
+            </select>
+            <br>
+            <input type="text" name="postal" [(ngModel)]="userData.postal" placeholder="Codigo Zip/Postal"/>
+            
+            <img src="../../assets/img/mc_visa_disc.png">
+
+            <hr>
+            
+            <input type="text" name="notajeta" [(ngModel)]="userData.notarjeta" placeholder="No. de tarjeta"/>
+            <input type="text" name="cvc" [(ngModel)]="userData.cvc" placeholder="CVV2/CVC2"/>
+            <label>Fecha de Expiracion</label>
+            <input type="date" name="fechaexp" [(ngModel)]="userData.fechaexp" placeholder="fecha de expiracion de la tarjeta">
+            <input type="number" name="limitecredito" [(ngModel)]="limiteCredito" placeholder="limite de credito" disabled/>
+                 
+            <hr>
+
+            <input type="password" name="password" [(ngModel)]="userData.password" placeholder="password"/>
+            <input type="password" placeholder="password"/>
+            <button (click)="register()">Registar</button>
+            <p class="message">Ya estas registrado? <a routerLink="/login">Login</a></p>
+
+          </form>
+    
+    </div>
+  </div>
+</div>

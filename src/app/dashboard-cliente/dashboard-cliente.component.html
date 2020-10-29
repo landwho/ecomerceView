@@ -1,0 +1,158 @@
+<br>
+<div class="">
+    
+
+    
+
+
+  <div class="">
+      <div class="col-lg-8 col-md-6 col-sm-12">
+        
+        
+      <div class="">
+
+          <!--compras a la fecha-->
+          <div class="col-lg-6 col-md-12 col-sm-12">
+                      
+
+            <div class="sidebar card">
+              <div class="card-body">
+                <h4 class="card-title">Historial de Compras</h4>
+            
+              <ul class="unstyled content">
+                <li *ngFor="let p of pays">
+                    <div class="end pointer" (click)="delete(p.ID)">
+                      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>
+                      </svg>
+                    </div>
+                    <figure class="pointer" (click)="getTransac(p.TOTAL)">
+
+                    <div class="description">
+                      <p>{{p.FECHA}}</p>  
+                      <a><span></span>{{p.NOMBRE}}</a>
+                      <a><span></span>Total: Q{{p.TOTAL | number}}</a>
+                    </div>
+                  </figure>
+                </li>
+              </ul>
+          </div>
+            </div>
+
+          </div>
+
+          <!--products details-->
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <div class="sidebar card">
+              <div class="card-body">
+              <h4 class="card-title">Detalle Compra</h4>
+              <ul class="unstyled content">
+                <li *ngFor="let p of products">
+                  <figure class="pointer" (click)="changeTemporada(b.NAME,b.IMAGE)"><img class="bg" src="{{p.imagen}}">
+                    <div class="description">
+                      <p>{{p.nombre}}</p><a><span></span>Costo: Q {{p.precio | number}}</a>
+                    </div>
+                  </figure>
+                </li>
+              </ul>
+</div>
+
+            </div>
+          </div>
+
+
+      </div>
+  </div>
+
+
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="">
+
+          <!--theme-->
+          <div class="col-lg-12">
+            <div class="sidebar card">
+             
+              
+              <ul class="unstyled content">
+               
+                <li *ngFor="let b of bgs">
+                  <figure class="pointer" (click)="changeTemporada(b.NAME,b.IMAGE)"><img class="bg" src="{{b.IMAGE}}">
+                    <div class="description">
+                      <p>{{b.NAME}}</p><a><span></span>Camnbiar</a>
+                    </div>
+                  </figure>
+                </li>
+
+           
+                
+              </ul>
+            </div>
+          </div>
+
+
+
+          <!--<div class="col-lg-12">
+            <div class="user-menu card">
+              <ul class="unstyled table fullwidth">
+                <li><a><span class="icon-user"></span></a></li>
+                <li><a><span class="icon-calendar"></span></a></li>
+                <li><a><span class="icon-comment"></span></a></li>
+                <li class="activity"><a><span class="icon-bell-alt"></span></a></li>
+                <li><a><span class="icon-search"></span></a></li>
+              </ul>
+            </div>
+          </div>-->
+
+          <div class="col-lg-12">
+            <div class="login-form card">
+             
+            
+              <button class="login-btn" (click)="logout()">Logout</button>
+              
+            </div>
+          </div>
+
+
+
+
+          <!--<div class="col-lg-12">
+            <div class="weather card">
+              <div class="current">
+                <div class="icon"><span class="icon-sun"></span></div>
+                <div class="temperature">30&deg;</div>
+              </div>
+              <div class=" info">
+                <div class="col-lg-10">
+                  <div class="city">Guatemala</div>
+                  <div class=" indicators">
+                    <div class="col-lg-6 precipitation"><span class="icon icon-tint"></span>13%</div>
+                    <div class="col-lg-6 wind"><span class="icon icon-flag"></span>15<small>Mph</small></div>
+                  </div>
+                </div>
+                <div class="col-lg-2">
+                  <button class="refresh"><span class="icon-refresh"></span></button>
+                </div>
+              </div>
+            </div>
+          </div>-->
+
+
+
+        </div>
+      </div>
+
+
+
+
+
+
+ 
+
+    </div>
+
+  
+    
+  
+    
+
+</div>

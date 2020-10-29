@@ -1,0 +1,92 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: #673ab7;
+  color: white;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 16px;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  background: #000000e3;
+  color: white;
+}
+
+.margin{
+  margin-left: 15px;
+}
+
+.border{
+  padding: 24px;
+  border-style: groove;
+  background: white;
+}
+
+.coinspan{
+  margin-right: 10px;
+  background: #3e3636b3;
+  
+  border-radius: 50px 50px;
+}
+.coin{
+  max-width: 30px;
+}
+
+.limitcredit{
+  font-size:15px;
+  color: #3cff3c;
+}
+.caretsize{
+  font-size: 14px;
+}
+
+.count{
+  border: 2px solid red;
+  
+  /*border-radius: 50px 50px;*/
+  background: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

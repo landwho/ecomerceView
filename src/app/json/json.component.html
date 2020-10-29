@@ -1,0 +1,51 @@
+<div class="container">
+
+
+<br><br><br><br>
+
+
+
+
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Correo</th>
+      </tr>
+    </thead>
+
+    <tbody>
+   
+       
+        <tr *ngFor="let p of allPersons">
+         
+            <th>{{p.ID}}</th>
+            <th>{{p.NOMBRE}}</th>
+            <th>{{p.APELLIDO}}</th>
+            <th>{{p.CORREO}}</th>
+
+        </tr>
+      
+      
+    </tbody>
+  </table>
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+
+</div>

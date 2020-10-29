@@ -6,8 +6,162 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="mat-typography">
+
+  
+
   <app-root></app-root>
+
+
+  <!--<ul id="switcher">
+    <li id="grayButton" ></li>
+    <li id="whiteButton" ></li>
+    <li id="blueButton" ></li>
+    <li id="yellowButton"></li>
+  </ul> -->
+
+  <script>
+
+var month = new Date();
+let m = month.getMonth()+1 ; 
+// let m = 12;
+console.log(m);
+    
+  
+
+
+        /*
+        if(m == 2){
+          
+          localStorage.removeItem('navidadTheme');
+          localStorage.removeItem('halloweenTheme');
+
+          document.getElementsByTagName('body')[0].style.backgroundImage ="url('./assets/img/cupido2.jpg')";
+          var cupido =  document.getElementsByTagName('body')[0].style.backgroundImage ="url('./assets/img/cupido2.jpg')";
+          document.getElementsByTagName('body')[0].style.color = 'white'; 
+          localStorage.setItem('cupidoTheme', cupido);
+
+          localStorage.getItem('cupidoTheme')
+          document.getElementsByTagName('body')[0].style.backgroundImage = "url('./assets/img/cupido2.jpg')";
+
+        }
+
+        if(m == 10){
+          
+          localStorage.removeItem('navidadTheme');
+          localStorage.removeItem('cupidoTheme');
+
+          document.getElementsByTagName('body')[0].style.backgroundImage = "url('./assets/img/halloween2.jpg')";
+          var halloween = document.getElementsByTagName('body')[0].style.backgroundImage = "url('./assets/img/halloween2.jpg')";
+          document.getElementsByTagName('body')[0].style.color = 'white'; 
+          localStorage.setItem('halloweenTheme', halloween);
+
+          localStorage.getItem('halloweenTheme');
+          document.getElementsByTagName('body')[0].style.backgroundImage = "url('./assets/img/halloween2.jpg')";
+
+        }
+
+
+        if(m == 12){
+          localStorage.removeItem('halloweenTheme');
+          localStorage.removeItem('cupidoTheme');
+
+          document.getElementsByTagName('body')[0].style.backgroundImage ="url('./assets/img/navidad2.jpg')";
+          document.getElementsByTagName('body')[0].style.color = 'black'; 
+          var navidad =  document.getElementsByTagName('body')[0].style.backgroundImage ="url('./assets/img/navidad2.jpg')";      
+          localStorage.setItem('navidadTheme', navidad);
+
+          localStorage.getItem('navidadTheme')
+          document.getElementsByTagName('body')[0].style.backgroundImage ="url('./assets/img/navidad2.jpg')";  
+
+        }
+
+*/
+
+
+
+
+
+
+
+   function change(id){
+     console.log(localStorage.getItem('navidadTheme'))
+      if  (localStorage.getItem('navidadTheme')) {
+      document.getElementsByTagName('body')[0].style.backgroundImage =localStorage.getItem('navidadTheme');   
+      var intro = document.getElementById('intro');
+      intro.style.backgroundColor = '#FF00FF';
+      }
+      else if (localStorage.getItem('halloweenTheme')) {
+      document.getElementsByTagName('body')[0].style.backgroundImage = localStorage.getItem('halloweenTheme');
+      }
+      else if (localStorage.getItem('cupidoTheme')) {
+      document.getElementsByTagName('body')[0].style.backgroundImage = localStorage.getItem('cupidoTheme');
+      }
+      else if (localStorage.getItem('DarkTheme')) {
+      document.getElementsByTagName('body')[0].style.backgroundImage = localStorage.getItem('DarkTheme');
+      }
+
+
+      else if (localStorage.getItem('PatriotTheme')) {
+      document.getElementsByTagName('body')[0].style.backgroundImage = localStorage.getItem('PatriotTheme');
+      }
+    };change(); 
+
+
+
+
+
+        
+  /*  function switchGray() {
+          localStorage.removeItem('navidadTheme');
+          localStorage.removeItem('halloweenTheme');
+
+          document.getElementsByTagName('body')[0].style.backgroundImage ="url('./assets/img/cupido.jpg')";
+          var cupido =  document.getElementsByTagName('body')[0].style.backgroundImage ="url('./assets/img/cupido.jpg')";
+          document.getElementsByTagName('body')[0].style.color = 'white'; 
+          localStorage.setItem('cupidoTheme', cupido);
+
+        }
+
+        function switchWhite() {
+          localStorage.removeItem('halloweenTheme');
+          localStorage.removeItem('cupidoTheme');
+
+          document.getElementsByTagName('body')[0].style.backgroundImage ="url('./assets/img/navidad.jpg')";
+          document.getElementsByTagName('body')[0].style.color = 'black'; 
+          var navidad =  document.getElementsByTagName('body')[0].style.backgroundImage ="url('./assets/img/navidad.jpg')";      
+          localStorage.setItem('navidadTheme', navidad);
+
+        }
+
+        function switchBlue() {
+          localStorage.removeItem('navidadTheme');
+          localStorage.removeItem('cupidoTheme');
+
+          document.getElementsByTagName('body')[0].style.backgroundImage = "url('./assets/img/halloween.jpg')";
+          var halloween = document.getElementsByTagName('body')[0].style.backgroundImage = "url('./assets/img/halloween.jpg')";
+          document.getElementsByTagName('body')[0].style.color = 'white'; 
+          localStorage.setItem('halloweenTheme', halloween);
+        }
+
+        function switchYellow() {
+          
+          document.getElementsByTagName('body')[0].style.backgroundColor = 'yellow'; 
+          document.getElementsByTagName('body')[0].style.color = 'black'; 
+
+        } */
+
+        
+   
+  </script>
+
+
 </body>
 </html>

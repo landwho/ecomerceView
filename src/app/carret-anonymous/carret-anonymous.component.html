@@ -1,0 +1,111 @@
+
+<div class="container">
+    <br>
+    <div class="row">
+        <div class="col-md-8 anonimousPanel">
+    
+            <h2>Formulario de Pago</h2>
+        <div class="anonimousPanel">
+            <form class="form-horizontal">
+    
+         
+                <div class="form-group">
+                 
+                  <div class="end"><label for="importe">Total a Pagar</label></div>
+    
+                  <div class="end"><label class="anonimousTotal" for="total">Q. {{total}} </label></div>
+                  
+                </div>
+    
+    
+                <div class="form-group">
+                  <label class="control-label col-sm-10" for="email">Nombre del titular:</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="nombre" [(ngModel)]="nombre" placeholder="Nombre del titular" >
+                  </div>
+                </div>
+           
+              <div class="form-group">
+                <label class="control-label col-sm-10" for="email">No. Tarjeta:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="tarjeta" [(ngModel)]="tarjeta" placeholder="No. de Tarjeta">
+                  <span class="error">{{error}}</span>
+                </div>
+              </div>
+    
+          
+      
+              <div class="form-group">
+                <label class="control-label col-sm-10" for="email">Codigo de seguridad:</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" name="cvc" [(ngModel)]="cvc" placeholder="cvv/cvc" >
+                  <span class="error">{{errorCvc}}</span>
+                </div>
+              </div>
+    
+    
+              <div class="form-group">
+                <label class="control-label col-sm-10" for="pwd">Pais:</label>
+                <div class="col-sm-10">          
+                  <input type="text" class="form-control" name="pais" [(ngModel)]="pais" placeholder="Pais de origen" >
+                </div>
+              </div>
+    
+    
+              <div class="form-group">
+                <label class="control-label col-sm-10" for="email">Direccion:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="direccion" [(ngModel)]="direccion" placeholder="Direccion">
+                </div>
+              </div>
+              
+    
+         
+              
+              <div class="form-group">        
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button class="btn btn-info" (click)="payload(total)">Submit</button>
+                </div>
+              </div>
+            </form>
+        </div>
+    
+    
+        </div>
+    
+    
+    
+    
+    
+        <div class="col-md-4 anonimousPanel">
+            <h2>Listado de Productos</h2> 
+            <div class="ex1">
+    
+                <div class="card card-marginbottom" *ngFor="let c of carret">
+                    <!--<img class="card-img-top" src="img_avatar1.png" alt="Card image">-->
+                    <div class="card-body">
+                      <h4 class="card-title fontW">{{c.nombre}}</h4>
+                      <p class="card-text">Precio: Q {{c.precio}}</p>
+                      <figure class="figureAlign"><img class="carretImage" src="{{c.imagen}}" alt=""></figure>
+                      <a (click)="remove(c.id)" class="btn btn-primary">Quitar</a>
+                    </div>
+                </div>
+        
+    
+            </div>
+    
+        </div>
+        
+    
+    
+        
+    </div>
+        
+        <br><br>
+    
+    
+    </div>
+    
+    
+    
+    
